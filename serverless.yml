@@ -1,6 +1,8 @@
 service: elchat
 frameworkVersion: '2'
 
+configValidationMode: error
+
 provider:
   name: aws
   runtime: nodejs14.x
@@ -9,3 +11,8 @@ provider:
 functions:
   criarUsuario:
     handler: src/handlers/criarUsuario.handler
+    events:
+      - http:
+          path: /usarios
+          method: POST
+          cors: true

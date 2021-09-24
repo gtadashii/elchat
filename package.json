@@ -1,0 +1,13 @@
+{
+  "name": "typescript-serverless-skell",
+  "version": "1.0.0",
+  "description": "Serverless aws-nodejs-typescript template",
+  "main": "serverless.ts",
+  "scripts": {
+    "deploy": "serverless deploy"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {}
+}
