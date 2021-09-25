@@ -19,3 +19,52 @@ functions:
           path: /usarios
           method: POST
           cors: true
+  retornarUsuario:
+    handler: src/handlers/retornaUsuario.handler
+    events:
+      - http:
+          path: /usarios/{id}
+          method: GET
+          cors: true
+  login:
+    handler: src/handlers/login.handler
+    events:
+      - http:
+          path: /login
+          method: POST
+          cors: true
+  criarChat:
+    handler: src/handlers/criarChat.handler
+    events:
+      - http:
+          path: /chats
+          method: POST
+          cors: true
+  retornaChat:
+    handler: src/handlers/retornaChat.handler
+    events:
+      - http:
+          path: /chats/{id}
+          method: GET
+          cors: true
+  deletarChat:
+    handler: src/handlers/deletarChat.handler
+    events:
+      - http:
+          path: /chats/{id}
+          method: DELETE
+          cors: true
+  enviarMensagem:
+    handler: src/handlers/criarMensagem.handler
+    events:
+      - http:
+          path: /mensagens
+          method: POST
+          cors: true
+  retornaMensagem:
+    handler: src/handlers/retornaMensagem.handler
+    events:
+      - http:
+          path: /mensagens/{id}
+          method: GET
+          cors: true
