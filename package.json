@@ -7,6 +7,7 @@
     "deploy": "serverless deploy"
   },
   "dependencies": {
+    "dayjs": "^1.10.7",
     "uuid": "^8.3.2"
   },
   "devDependencies": {}
