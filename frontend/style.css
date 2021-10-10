@@ -1,0 +1,51 @@
+body {
+  background-color: #bcbcbc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  border-radius: 14px;
+  margin-top: 10%;
+  background-color: #d1d9ed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 400px;
+}
+
+.text {
+  line-height: 0.8;
+  text-align: center;
+}
+
+.title {
+  line-height: 0.8;
+  text-align: center;
+  font-size: 16px;
+}
+
+.actions {
+  margin: 15px 0px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.actions input[type="button"] {
+  margin: 0px 30px;
+  font-weight: bold;
+  height: 40px;
+  width: 120px;
+  border-radius: 5px;
+  border-width: 1;
+  border-color: #000;
+  background: #fff
+}
+
+.actions input[type="button"]:hover {
+  background-color: black;
+  color: white;
+}
