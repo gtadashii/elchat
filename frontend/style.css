@@ -4,6 +4,8 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/* Pagina inicial */
 .container {
   border-radius: 14px;
   margin-top: 10%;
@@ -44,8 +46,36 @@ body {
   border-color: #000;
   background: #fff
 }
-
 .actions input[type="button"]:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Pagina cadastro */
+.form-cadastro {
+  line-height: 1.5;
+  border-radius: 14px;
+  margin-top: 10%;
+  background-color: #d1d9ed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 800px;
+  height: 400px;
+  padding: 0px 60px;
+}
+
+#botaoEnviar {
+  margin-top: 20px;
+  font-weight: bold;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  border-width: 1;
+  border-color: #000;
+  background: #fff
+}
+#botaoEnviar:hover {
   background-color: black;
   color: white;
 }
