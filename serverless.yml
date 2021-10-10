@@ -5,6 +5,7 @@ configValidationMode: error
 
 plugins:
   - serverless-offline
+  - serverless-ignore
 
 provider:
   name: aws

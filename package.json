@@ -11,6 +11,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "serverless-ignore": "^0.1.6",
     "serverless-offline": "^8.2.0"
   }
 }

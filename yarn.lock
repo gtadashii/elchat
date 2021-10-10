@@ -744,6 +744,11 @@ ieee754@^1.1.4:
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.2.1.tgz#8eb7a10a63fff25d15a57b001586d177d1b0d352"
   integrity sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==
 
+ignore@^3.3.8:
+  version "3.3.10"
+  resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.10.tgz#0a97fb876986e8081c631160f8f9f389157f0043"
+  integrity sha512-Pgs951kaMm5GXP7MOvxERINe3gsaVjUWFm+UZPSq9xYriQAksyhg0csnS0KXSNRD5NmNdapXEpjxG49+AKh/ug==
+
 immediate@~3.0.5:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/immediate/-/immediate-3.0.6.tgz#9db1dbd0faf8de6fbe0f5dd5e56bb606280de69b"
@@ -1441,6 +1446,13 @@ semver@^7.3.4:
   integrity sha512-PoeGJYh8HK4BTO/a9Tf6ZG3veo/A7ZVsYrSA6J8ny9nb3B1VrpkuN+z9OE5wfE5p6H4LchYZsegiQgbJD94ZFQ==
   dependencies:
     lru-cache "^6.0.0"
+
+serverless-ignore@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/serverless-ignore/-/serverless-ignore-0.1.6.tgz#bb0da6e6275876d41749f210fa2795087ca070ef"
+  integrity sha512-rONeQh6zwAy1H0+pFrWpHvDU5B1R5E1b77JDqGxqqZ/KXK9G01rWUY8P61fHG2rDdDpveEHoa/WdiCwM98m83w==
+  dependencies:
+    ignore "^3.3.8"
 
 serverless-offline@^8.2.0:
   version "8.2.0"
