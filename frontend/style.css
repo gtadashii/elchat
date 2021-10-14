@@ -73,9 +73,83 @@ body {
   border-radius: 5px;
   border-width: 1;
   border-color: #000;
+  justify-content: flex-end;
   background: #fff
 }
 #botaoEnviar:hover {
   background-color: black;
   color: white;
+}
+
+/* Pagina de chats */
+.chat_page {
+  line-height: 1.5;
+  border-radius: 14px;
+  margin-top: 10%;
+  background-color: #d1d9ed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 800px;
+  height: 1000px;
+  padding: 0px 60px;
+}
+
+#chat {
+  margin-top: 20px;
+  font-weight: bold;
+  width: 80%;
+  height: 45px;
+  border-radius: 5px;
+  border-width: 1;
+  border-color: #000;
+  background: #fff;
+}
+
+.container_botao{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.containerMsg {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.containerMsg::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.containerMsg img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.containerMsg img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
 }
