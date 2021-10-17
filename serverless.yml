@@ -62,6 +62,13 @@ functions:
           path: /mensagens
           method: POST
           cors: true
+  retornoMensagens:
+    handler: src/handlers/retornaMensagens.handler
+    events:
+      - http:
+          path: /mensagens
+          method: GET
+          cors: true
   retornaMensagem:
     handler: src/handlers/retornaMensagem.handler
     events:

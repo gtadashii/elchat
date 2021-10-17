@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EL CHAT - CADASTRO</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="script.js"></script>
 </head>
 
@@ -30,7 +31,7 @@
     <label for="dtNascimento">Data Nascimento</label>
     <input id="dtNascimento" type="date">
     <center>
-      <button id="botaoEnviar">Finalizar</button>
+      <input id="botaoEnviar" type="button" value="Finalizar" onclick="signup()">
     </center>
   </form>
 </body>
