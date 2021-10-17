@@ -108,7 +108,7 @@ body {
 
 .container_botao{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
 }
 
 .containerMsg {
