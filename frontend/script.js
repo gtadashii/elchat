@@ -25,3 +25,17 @@ async function signup() {
     console.error(error);
   });
 }
+
+async function sendMessage() {
+  const options = {
+    method: 'POST',
+    url: 'https://heu8nknhya.execute-api.us-east-1.amazonaws.com/dev/mensagens'
+  };
+
+  axios.request(options).then(function (response) {
+    const data = JSON.stringify(response.data);
+    alert(data);
+  }).catch(function (error) {
+    console.error(error);
+  });
+}
