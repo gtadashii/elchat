@@ -7,19 +7,32 @@ plugins:
   - serverless-offline
   - serverless-ignore
 
+custom:
+  dotenvVars: ${file(config/config.js)}
+
 provider:
   name: aws
   runtime: nodejs14.x
   lambdaHashingVersion: 20201221
+  environment:
+    DYNAMO_REGION: ${env:DYNAMO_REGION}
 
 functions:
   criarUsuario:
     handler: src/handlers/criarUsuario.handler
+    environment:
+      USERS_TABLE: ${env:USERS_TABLE}
     events:
       - http:
           path: /usarios
           method: POST
           cors: true
+    iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:PutItem
+      Resource:
+        - ${env:USERS_TABLE_ARN}
   retornarUsuario:
     handler: src/handlers/retornaUsuario.handler
     events:
