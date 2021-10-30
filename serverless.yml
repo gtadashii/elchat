@@ -5,6 +5,12 @@ configValidationMode: error
 
 plugins:
   - serverless-offline
+  - serverless-prune-plugin
+
+custom:
+  prune:
+    automatic: true
+    number: 3
 
 provider:
   name: aws

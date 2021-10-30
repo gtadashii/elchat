@@ -355,6 +355,11 @@ bcryptjs@^2.4.3:
   resolved "https://registry.yarnpkg.com/bcryptjs/-/bcryptjs-2.4.3.tgz#9ab5627b93e60621ff7cdac5da9733027df1d0cb"
   integrity sha1-mrVie5PmBiH/fNrF2pczAn3x0Ms=
 
+bluebird@^3.4.7:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
+  integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
+
 boxen@^5.0.0:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/boxen/-/boxen-5.1.2.tgz#788cb686fc83c1f486dfa8a40c68fc2b831d2b50"
@@ -1513,6 +1518,13 @@ serverless-offline@^8.2.0:
     update-notifier "^5.0.1"
     velocityjs "^2.0.3"
     ws "^7.4.2"
+
+serverless-prune-plugin@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/serverless-prune-plugin/-/serverless-prune-plugin-1.6.1.tgz#633a34bd9b1878b05c53821319db745a058f440e"
+  integrity sha512-rTeaedrVRWFdfXgSsraxcCHpVzL3AqztcYSr7FY3Jc74PJ0/H6Ukf5nFKKYZSolnF3JkU8ddwQGY52YnJIxQqw==
+  dependencies:
+    bluebird "^3.4.7"
 
 set-immediate-shim@~1.0.1:
   version "1.0.1"
