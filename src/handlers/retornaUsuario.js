@@ -1,20 +1,35 @@
 'use strict';
-const dayjs = require('dayjs');
+const { document } = require('../utils/dynamoDbClient');
 
 module.exports.handler = async (event) => {
   const { id } = event.pathParameters;
-  const user = {
-    id: id,
-    username: "Josesinho",
-    email: "josesinho@email.com",
-    dataNascimento: dayjs('2020-01-01').format('DD/MM/YYYY')
+
+  const response = await document.query({
+    TableName: process.env.USERS_TABLE,
+    KeyConditionExpression: "id = :id",
+    ExpressionAttributeValues: {
+      ":id": id
+    }
+  }).promise();
+
+  if (response.Items.length > 0) {
+    const { id, username, email, birthdate } = response.Items[0];
+    const user = {
+      id,
+      username,
+      email,
+      birthdate
+    }
+    return {
+      statusCode: 200,
+      body: JSON.stringify(user)
+    };
+  } else {
+    return {
+      statusCode: 404,
+      body: JSON.stringify({
+        message: "Nao foi encontrado nenhum usuário"
+      })
+    }
   }
-  return {
-    statusCode: 200,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': true,
-    },
-    body: JSON.stringify(user, null, 2),
-  };
 };
