@@ -18,7 +18,7 @@ module.exports.handler = async (event) => {
   };
 
   await document.put({
-    TableName: process.env.USERS_TABLE,
+    TableName: "usersTable",
     Item: user
   }).promise();
 

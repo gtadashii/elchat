@@ -6,15 +6,10 @@ configValidationMode: error
 plugins:
   - serverless-offline
 
-custom:
-  dotenvVars: ${file(config/config.js)}
-
 provider:
   name: aws
   runtime: nodejs14.x
   lambdaHashingVersion: 20201221
-  environment:
-      USERS_TABLE: ${env:USERS_TABLE}
   iam:
     role:
       statements:

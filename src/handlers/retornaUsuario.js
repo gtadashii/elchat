@@ -5,7 +5,7 @@ module.exports.handler = async (event) => {
   const { id } = event.pathParameters;
 
   const response = await document.query({
-    TableName: process.env.USERS_TABLE,
+    TableName: "usersTable",
     KeyConditionExpression: "id = :id",
     ExpressionAttributeValues: {
       ":id": id
