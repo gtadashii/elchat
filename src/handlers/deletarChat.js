@@ -1,5 +1,7 @@
 'use strict';
 
+// TODO: Criar funcao que deleta um chat
+
 module.exports.handler = async (event) => {
   const body = {
     message: "Chat deletedo com sucesso"

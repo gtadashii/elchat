@@ -1,20 +1,38 @@
 'use strict';
-const { v4: uuidv4 } = require('uuid');
+const { document } = require('../utils/dynamoDbClient');
 
 module.exports.handler = async (event) => {
   const { id } = event.pathParameters;
-  const chat = {
-    id: id,
-    idRemetente: uuidv4(),
-    idDestinatario: uuidv4(),
-    mensagens: []
+
+  const response = await document.query({
+    TableName: "conversationsTable",
+    KeyConditionExpression: "id = :id",
+    ExpressionAttributeValues: {
+      ":id": id
+    }
+  }).promise();
+
+  if (response.Items.length > 0) {
+
+    const { id, sender, recipient, messages } = response.Items[0];
+
+    const chat = {
+      id,
+      sender,
+      recipient,
+      messages
+    };
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify(chat)
+    };
+  } else {
+    return {
+      statusCode: 404,
+      body: JSON.stringify({
+        message: "Nao foi encontrado nenhum chat com esse id"
+      })
+    }
   }
-  return {
-    statusCode: 200,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': true,
-    },
-    body: JSON.stringify(chat, null, 2),
-  };
 };
