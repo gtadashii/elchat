@@ -29,6 +29,7 @@ provider:
             - dynamodb:DeleteItem
           Resource:
             - arn:aws:dynamodb:us-east-1:191154310521:table/usersTable
+            - arn:aws:dynamodb:us-east-1:191154310521:table/conversationsTable
 
 functions:
   criarUsuario:

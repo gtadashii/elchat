@@ -1,23 +1,31 @@
 'use strict';
-const { v4: uuidv4 } = require('uuid');
-const dayjs = require('dayjs')
+
+const { document } = require('../utils/dynamoDbClient');
 
 module.exports.handler = async (event) => {
-  const { id } = event.pathParameters;
-  const mensagem = {
-    id: id,
-    idConversa: uuidv4(),
-    idRemetente: uuidv4(),
-    idDestinatario: uuidv4(),
-    mensagem: "Olá, tudo bem?",
-    horarioEnvio: dayjs().format('DD/MM/YYYY HH:MM:SS')
+  const pathParameters = event.pathParameters;
+
+  const conversationsResponse = await document.query({
+    TableName: "conversationsTable",
+    KeyConditionExpression: "id = :id",
+    ExpressionAttributeValues: {
+      ":id": pathParameters.id
+    }
+  }).promise();
+
+  if (conversationsResponse.Items.length === 0) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({
+        message: "Não foi possível encontrar a conversa informado"
+      })
+    }
   }
+
+  const messages = conversationsResponse.Items[0].messages;
+
   return {
     statusCode: 200,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': true,
-    },
-    body: JSON.stringify(mensagem, null, 2),
-  };
+    body: JSON.stringify(messages)
+  }
 };

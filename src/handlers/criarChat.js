@@ -54,9 +54,7 @@ module.exports.handler = async (event) => {
 
   return {
     statusCode: 201,
-    body: JSON.stringify({
-      message: 'Chat iniciado com sucesso'
-    }),
+    body: JSON.stringify(conversation),
     headers: {
       "Content-Type": "application/json"
     }
